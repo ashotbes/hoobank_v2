@@ -2,7 +2,6 @@ import {useState} from "react";
 
 import {close, logo, menu} from "../assets";
 import {navLinks} from "../constants";
-import styles from "../style.js";
 
 const Navbar = () => {
     const [active, setActive] = useState("Home");
@@ -26,18 +25,18 @@ const Navbar = () => {
                 ))}
             </ul>
 
-            <div className="sm:hidden flex flex-1 justify-end items-center relative">
+            <div className="sm:hidden flex flex-1 justify-end items-center relative ">
                 <img
                     src={toggle ? close : menu}
                     alt="menu"
-                    className="w-[28px] h-[28px] object-contain"
+                    className="w-[28px] h-[28px] object-contain "
                     onClick={() => setToggle(!toggle)}
                 />
 
                 <div
                     className={`${
                         !toggle ? "hidden" : "flex"
-                    } p-6 bg-black-gradient right-0 relative top-0 left-[13px] bottom-[6px] mt-[11px]`}
+                    }  p-6 bg-black-gradient right-0 relative top-0 left-[13px] bottom-[6px] mt-[11px] animate-fade-left`}
                 >
                     <ul className="list-none flex justify-end items-start flex-1 flex-col">
                         {navLinks.map((nav, index) => (
